@@ -1,0 +1,13 @@
+D:\Angular\MicroServicesV2\ProductServices\Product.Core\bin\Debug\net8.0\Product.Core.deps.json
+D:\Angular\MicroServicesV2\ProductServices\Product.Core\bin\Debug\net8.0\Product.Core.dll
+D:\Angular\MicroServicesV2\ProductServices\Product.Core\bin\Debug\net8.0\Product.Core.pdb
+D:\Angular\MicroServicesV2\ProductServices\Product.Core\obj\Debug\net8.0\Product.Core.csproj.AssemblyReference.cache
+D:\Angular\MicroServicesV2\ProductServices\Product.Core\obj\Debug\net8.0\Product.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Angular\MicroServicesV2\ProductServices\Product.Core\obj\Debug\net8.0\Product.Core.AssemblyInfoInputs.cache
+D:\Angular\MicroServicesV2\ProductServices\Product.Core\obj\Debug\net8.0\Product.Core.AssemblyInfo.cs
+D:\Angular\MicroServicesV2\ProductServices\Product.Core\obj\Debug\net8.0\Product.Core.csproj.CoreCompileInputs.cache
+D:\Angular\MicroServicesV2\ProductServices\Product.Core\obj\Debug\net8.0\Product.Core.sourcelink.json
+D:\Angular\MicroServicesV2\ProductServices\Product.Core\obj\Debug\net8.0\Product.Core.dll
+D:\Angular\MicroServicesV2\ProductServices\Product.Core\obj\Debug\net8.0\refint\Product.Core.dll
+D:\Angular\MicroServicesV2\ProductServices\Product.Core\obj\Debug\net8.0\Product.Core.pdb
+D:\Angular\MicroServicesV2\ProductServices\Product.Core\obj\Debug\net8.0\ref\Product.Core.dll

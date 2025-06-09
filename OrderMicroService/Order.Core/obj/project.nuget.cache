@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "acuItOu6N9Q=",
+  "success": true,
+  "projectFilePath": "D:\\Angular\\MicroServicesV2\\OrderMicroService\\Order.Core\\Order.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Kishor\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
+    "C:\\Users\\Kishor\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.2\\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\Kishor\\.nuget\\packages\\microsoft.extensions.options\\8.0.0\\microsoft.extensions.options.8.0.0.nupkg.sha512",
+    "C:\\Users\\Kishor\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

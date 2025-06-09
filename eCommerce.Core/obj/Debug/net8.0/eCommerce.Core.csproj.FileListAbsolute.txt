@@ -1,0 +1,13 @@
+D:\Angular\MicroServicesV2\eCommerce.Core\bin\Debug\net8.0\eCommerce.Core.deps.json
+D:\Angular\MicroServicesV2\eCommerce.Core\bin\Debug\net8.0\eCommerce.Core.dll
+D:\Angular\MicroServicesV2\eCommerce.Core\bin\Debug\net8.0\eCommerce.Core.pdb
+D:\Angular\MicroServicesV2\eCommerce.Core\obj\Debug\net8.0\eCommerce.Core.csproj.AssemblyReference.cache
+D:\Angular\MicroServicesV2\eCommerce.Core\obj\Debug\net8.0\eCommerce.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Angular\MicroServicesV2\eCommerce.Core\obj\Debug\net8.0\eCommerce.Core.AssemblyInfoInputs.cache
+D:\Angular\MicroServicesV2\eCommerce.Core\obj\Debug\net8.0\eCommerce.Core.AssemblyInfo.cs
+D:\Angular\MicroServicesV2\eCommerce.Core\obj\Debug\net8.0\eCommerce.Core.csproj.CoreCompileInputs.cache
+D:\Angular\MicroServicesV2\eCommerce.Core\obj\Debug\net8.0\eCommerce.Core.dll
+D:\Angular\MicroServicesV2\eCommerce.Core\obj\Debug\net8.0\refint\eCommerce.Core.dll
+D:\Angular\MicroServicesV2\eCommerce.Core\obj\Debug\net8.0\eCommerce.Core.pdb
+D:\Angular\MicroServicesV2\eCommerce.Core\obj\Debug\net8.0\ref\eCommerce.Core.dll
+D:\Angular\MicroServicesV2\eCommerce.Core\obj\Debug\net8.0\eCommerce.Core.sourcelink.json

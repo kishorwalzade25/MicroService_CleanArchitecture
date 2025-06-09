@@ -1,0 +1,25 @@
+services:
+  ecommerce.api:
+    image: ${DOCKER_REGISTRY-}ecommerceapi
+    build:
+      context: .
+      dockerfile: eCommerce.API/Dockerfile
+
+  ecommerce.data:
+     image: mcr.microsoft.com/mssql/server:2022-latest
+    
+
+
+  product.api:
+    image: ${DOCKER_REGISTRY-}productapi
+    build:
+      context: .
+      dockerfile: ProductServices/Product.API/Dockerfile
+
+
+  order.api:
+    image: ${DOCKER_REGISTRY-}orderapi
+    build:
+      context: .
+      dockerfile: OrderMicroService/Order.API/Dockerfile
+
