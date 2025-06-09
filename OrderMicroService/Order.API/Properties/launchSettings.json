@@ -8,7 +8,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development",
         //"UserMicroServiceURL": "http://localhost:61321"
         "UsersMicroserviceName": "localhost",
-        "UsersMicroservicePort": "8080"
+        "UsersMicroservicePort": "61321"
       },
       "dotnetRunMessages": true,
       "applicationUrl": "http://localhost:5243"
@@ -21,7 +21,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development",
         //"UserMicroServiceURL": "https://localhost:61322"
         "UsersMicroserviceName": "localhost",
-        "UsersMicroservicePort": "8080"
+        "UsersMicroservicePort": "61321"
 
       },
       "dotnetRunMessages": true,
@@ -35,7 +35,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development",
         //"UserMicroServiceURL": "https://localhost:61322"
         "UsersMicroserviceName": "localhost",
-        "UsersMicroservicePort": "8080"
+        "UsersMicroservicePort": "61321"
       }
     },
     "Container (Dockerfile)": {
@@ -47,7 +47,7 @@
         "ASPNETCORE_HTTP_PORTS": "8080",
         //"UserMicroServiceURL": "http://localhost:61321"
         "UsersMicroserviceName": "localhost",
-        "UsersMicroservicePort": "8080"
+        "UsersMicroservicePort": "61321"
       },
       "publishAllPorts": true,
       "useSSL": true
