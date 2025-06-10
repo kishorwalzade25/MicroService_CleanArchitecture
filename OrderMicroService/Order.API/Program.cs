@@ -19,7 +19,7 @@ builder.Services.AddOrderInfrastucture(builder.Configuration);
 
 builder.Services.AddHttpClient<UsersMicroserviceClient>(client => {
     //client.BaseAddress = new Uri(builder.Configuration["UserMicroServiceURL"]!);
-    client.BaseAddress = new Uri($"http://{builder.Configuration["UsersMicroserviceName"]}:{builder.Configuration["UsersMicroservicePort"]}");
+     client.BaseAddress = new Uri($"http://{builder.Configuration["UsersMicroserviceName"]}:{builder.Configuration["UsersMicroservicePort"]}");
 });
 
 var app = builder.Build();
@@ -32,7 +32,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseExceptionHandlingMiddleware();
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseAuthorization();
 

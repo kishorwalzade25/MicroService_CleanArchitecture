@@ -10,19 +10,15 @@ services:
         required: true
     environment:
       ASPNETCORE_ENVIRONMENT: Development
-      ASPNETCORE_HTTP_PORTS: "8080"
+      ASPNETCORE_HTTP_PORTS: "9090"
       ConnectionStrings__eCommerce: Server=ecommerce.data;Database=eCommerce.API;User Id=sa;Password=Kishor25;TrustServerCertificate=True;
     image: ecommerceapi
     networks:
       ecommerce-microservice-network: null
     ports:
       - mode: ingress
-        target: 8080
+        target: 9090
         published: "61321"
-        protocol: tcp
-      - mode: ingress
-        target: 8081
-        published: "61322"
         protocol: tcp
     volumes:
       - type: bind
@@ -81,7 +77,7 @@ services:
       ASPNETCORE_HTTP_PORTS: "8080"
       ConnectionStrings__OrderConn: Server=ecommerce.data;Database=Order.API;User Id=sa;Password=Kishor25;TrustServerCertificate=True;
       UserMicroServiceURL: ecommerce.api
-      UsersMicroservicePort: "61321"
+      UsersMicroservicePort: "9090"
     image: orderapi
     networks:
       ecommerce-microservice-network: null
@@ -89,10 +85,6 @@ services:
       - mode: ingress
         target: 8080
         published: "65221"
-        protocol: tcp
-      - mode: ingress
-        target: 8081
-        published: "65222"
         protocol: tcp
     volumes:
       - type: bind

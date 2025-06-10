@@ -20,7 +20,7 @@ namespace Order.Core.HttpClients
 
         public async Task<UserDTO?> GetUserByUserID(int userID)
         {
-            var url = _httpClient.BaseAddress + $"api/User/getUser/{userID}";
+            var url = _httpClient.BaseAddress + $"api/ApplicationUsers/{userID}";
             var response = await _httpClient.GetAsync(url);
 
             if (!response.IsSuccessStatusCode)

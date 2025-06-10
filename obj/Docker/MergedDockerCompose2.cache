@@ -1,0 +1,167 @@
+name: dockercompose6496549970810669175
+services:
+  ecommerce.api:
+    build:
+      context: D:\Angular\MicroServicesV2
+      dockerfile: eCommerce.API/Dockerfile
+    depends_on:
+      ecommerce.data:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "9090"
+      ConnectionStrings__eCommerce: Server=ecommerce.data;Database=eCommerce.API;User Id=sa;Password=Kishor25;TrustServerCertificate=True;
+    image: ecommerceapi
+    networks:
+      ecommerce-microservice-network: null
+    ports:
+      - mode: ingress
+        target: 9090
+        published: "61321"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\Kishor\AppData\Roaming/Microsoft/UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\Kishor\AppData\Roaming/Microsoft/UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\Kishor\AppData\Roaming/ASP.NET/Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\Kishor\AppData\Roaming/ASP.NET/Https
+        target: /root/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+  ecommerce.data:
+    container_name: ecommerce.data
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: Kishor25
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    networks:
+      ecommerce-microservice-network: null
+    ports:
+      - mode: ingress
+        target: 1433
+        published: "1478"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: D:\Angular\MicroServicesV2/Data
+        target: /var/opt/mssql/data
+        bind:
+          create_host_path: true
+  order.api:
+    build:
+      context: D:\Angular\MicroServicesV2
+      dockerfile: OrderMicroService/Order.API/Dockerfile
+    depends_on:
+      ecommerce.data:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ConnectionStrings__OrderConn: Server=ecommerce.data;Database=Order.API;User Id=sa;Password=Kishor25;TrustServerCertificate=True;
+      UsersMicroserviceName: ecommerce.api
+      UsersMicroservicePort: "9090"
+    image: orderapi
+    networks:
+      ecommerce-microservice-network: null
+    ports:
+      - mode: ingress
+        target: 8080
+        published: "65221"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\Kishor\AppData\Roaming/Microsoft/UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\Kishor\AppData\Roaming/Microsoft/UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\Kishor\AppData\Roaming/ASP.NET/Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\Kishor\AppData\Roaming/ASP.NET/Https
+        target: /root/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+  product.api:
+    build:
+      context: D:\Angular\MicroServicesV2
+      dockerfile: ProductServices/Product.API/Dockerfile
+    depends_on:
+      ecommerce.data:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ASPNETCORE_HTTPS_PORTS: "8081"
+      ConnectionStrings__productService: Server=ecommerce.data;Database=Product.API;User Id=sa;Password=Kishor25;TrustServerCertificate=True;
+    image: productapi
+    networks:
+      ecommerce-microservice-network: null
+    ports:
+      - mode: ingress
+        target: 8080
+        published: "62221"
+        protocol: tcp
+      - mode: ingress
+        target: 8081
+        published: "62222"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\Kishor\AppData\Roaming/Microsoft/UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\Kishor\AppData\Roaming/Microsoft/UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\Kishor\AppData\Roaming/ASP.NET/Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\Kishor\AppData\Roaming/ASP.NET/Https
+        target: /root/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+networks:
+  ecommerce-microservice-network:
+    name: dockercompose6496549970810669175_ecommerce-microservice-network
+    driver: bridge

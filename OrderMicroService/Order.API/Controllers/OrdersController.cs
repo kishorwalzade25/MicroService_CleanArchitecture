@@ -25,7 +25,7 @@ namespace Order.API.Controllers
                 return BadRequest("Invalid order data");
             }
 
-            OrderResponse? orderResponse = await _ordersRepository.AddOrder(orderAddRequest);
+            UserDTO? orderResponse = await _ordersRepository.AddOrder(orderAddRequest);
 
             if (orderResponse == null)
             {

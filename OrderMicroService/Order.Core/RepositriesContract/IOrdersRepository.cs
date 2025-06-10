@@ -17,7 +17,7 @@ namespace Order.Core.RepositriesContract
         //Task<IEnumerable<OrderDetails?>> GetOrdersByCondition(FilterDefinition<OrderDetails> filter); 
         //Task<OrderDetails?> GetOrderByCondition(FilterDefinition<OrderDetails> filter);
 
-        Task<OrderResponse?> AddOrder(OrderAddRequest orderAddRequest);
+        Task<UserDTO?> AddOrder(OrderAddRequest orderAddRequest);
         //Task<OrderDetails?> UpdateOrder(OrderDetails order);
 
         //Task<bool> DeleteOrder(Guid orderID);

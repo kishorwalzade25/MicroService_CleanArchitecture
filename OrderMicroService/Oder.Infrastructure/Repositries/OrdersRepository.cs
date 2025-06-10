@@ -26,7 +26,7 @@ namespace Oder.Infrastructure.Repositries
             _mapper = mapper;
             _orderDbContext = orderDbContext;
         }
-        public async Task<OrderResponse?> AddOrder(OrderAddRequest orderAddRequest)
+        public async Task<UserDTO?> AddOrder(OrderAddRequest orderAddRequest)
         {
             if (orderAddRequest == null)
             {
@@ -39,7 +39,7 @@ namespace Oder.Infrastructure.Repositries
                 throw new ArgumentException("Invalid User ID");
             }
 
-            return null;
+            return user;
 
             //OrderDetails orderInput = _mapper.Map<OrderDetails>(orderAddRequest); //Map OrderAddRequest to 'Order' type (it invokes OrderAddRequestToOrderMappingProfile class)
 
