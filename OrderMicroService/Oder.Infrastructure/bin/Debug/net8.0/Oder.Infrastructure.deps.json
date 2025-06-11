@@ -671,6 +671,25 @@
           }
         }
       },
+      "Polly/8.6.0": {
+        "dependencies": {
+          "Polly.Core": "8.6.0"
+        },
+        "runtime": {
+          "lib/net6.0/Polly.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.6.0.4711"
+          }
+        }
+      },
+      "Polly.Core/8.6.0": {
+        "runtime": {
+          "lib/net8.0/Polly.Core.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.6.0.4711"
+          }
+        }
+      },
       "System.ClientModel/1.0.0": {
         "dependencies": {
           "System.Memory.Data": "1.0.2",
@@ -941,7 +960,9 @@
       "Order.Core/1.0.0": {
         "dependencies": {
           "AutoMapper": "14.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.2",
+          "Polly": "8.6.0"
         },
         "runtime": {
           "Order.Core.dll": {
@@ -1258,6 +1279,20 @@
       "sha512": "sha512-KZYeKBET/2Z0gY1WlTAK7+RHTl7GSbtvTLDXEZZojUdAPqpQNDL6tHv7VUpqfX5VEOh+uRGKaZXkuD253nEOBQ==",
       "path": "mono.texttemplating/2.2.1",
       "hashPath": "mono.texttemplating.2.2.1.nupkg.sha512"
+    },
+    "Polly/8.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Lj8xVTtETAEUB0z0/c75vanP2mhKnuPXtyJlDWGgvv7v5i+MQcNK3K8Zvl7VjCOO4Ko4cxUlQr9Hb76DsV/khA==",
+      "path": "polly/8.6.0",
+      "hashPath": "polly.8.6.0.nupkg.sha512"
+    },
+    "Polly.Core/8.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3CY5h0gITrx+Ei5JvzZpuYLj0yEJquLeGLT9to4isjR7CN017ePDe1Fyp5bwEytu473CbWYiYDGEeY4uE8Iujw==",
+      "path": "polly.core/8.6.0",
+      "hashPath": "polly.core.8.6.0.nupkg.sha512"
     },
     "System.ClientModel/1.0.0": {
       "type": "package",

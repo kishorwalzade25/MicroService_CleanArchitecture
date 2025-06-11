@@ -12,6 +12,6 @@ namespace Order.Core.DTO
        public int UserID { get; set; }
        public decimal TotalBill {  get; set; }
        public DateTime OrderDate {  get; set; } 
-       public List<OrderItemResponse> OrderItems {  get; set; }=new List<OrderItemResponse>();
+       public List<OrderItemResponse> OrderItems {  get; set; }
     }
 }

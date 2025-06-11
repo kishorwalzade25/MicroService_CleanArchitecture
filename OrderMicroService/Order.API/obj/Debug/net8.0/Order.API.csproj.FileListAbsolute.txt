@@ -262,3 +262,10 @@ D:\Angular\MicroServicesV2\OrderMicroService\Order.API\bin\Debug\net8.0\Oder.Inf
 D:\Angular\MicroServicesV2\OrderMicroService\Order.API\bin\Debug\net8.0\Order.Core.dll
 D:\Angular\MicroServicesV2\OrderMicroService\Order.API\bin\Debug\net8.0\Oder.Infrastructure.pdb
 D:\Angular\MicroServicesV2\OrderMicroService\Order.API\bin\Debug\net8.0\Order.Core.pdb
+D:\Angular\MicroServicesV2\OrderMicroService\Order.API\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.dll
+D:\Angular\MicroServicesV2\OrderMicroService\Order.API\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+D:\Angular\MicroServicesV2\OrderMicroService\Order.API\bin\Debug\net8.0\Microsoft.Extensions.Http.dll
+D:\Angular\MicroServicesV2\OrderMicroService\Order.API\bin\Debug\net8.0\Microsoft.Extensions.Http.Polly.dll
+D:\Angular\MicroServicesV2\OrderMicroService\Order.API\bin\Debug\net8.0\Polly.dll
+D:\Angular\MicroServicesV2\OrderMicroService\Order.API\bin\Debug\net8.0\Polly.Core.dll
+D:\Angular\MicroServicesV2\OrderMicroService\Order.API\bin\Debug\net8.0\Polly.Extensions.Http.dll

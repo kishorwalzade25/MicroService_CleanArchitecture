@@ -15,6 +15,11 @@ namespace Order.Core.AutoMapper
         {
             CreateMap<OrderAddRequest,OrderDetails>().ReverseMap();
             CreateMap<OrderResponse, OrderDetails>().ReverseMap();
+            CreateMap<ProductDTO, OrderItemResponse>().ReverseMap();
+            CreateMap<UserDTO, OrderResponse>().ReverseMap();
+            CreateMap<OrderDetails, OrderUpdateRequest>().ReverseMap();
+            CreateMap<OrderItemAddRequest, OrderItem>().ReverseMap();
+            CreateMap<OrderItemResponse, OrderItem>().ReverseMap();
         }
     }
 }

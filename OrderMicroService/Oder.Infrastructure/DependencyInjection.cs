@@ -16,6 +16,7 @@ namespace Oder.Infrastructure
                 option.UseSqlServer(configuration.GetConnectionString("OrderConn")));
 
             services.AddScoped<IOrdersRepository,OrdersRepository>();
+            services.AddScoped<IOrdersService, OrdersService>();
             return services;
         }
     }

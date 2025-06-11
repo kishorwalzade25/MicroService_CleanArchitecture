@@ -15,6 +15,6 @@ namespace Order.Core.Entities
         public int UserID { get; set; }
         public DateTime OrderDate { get; set; }
         public decimal TotalBill { get; set; }
-        public List<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
+        public List<OrderItem> OrderItems { get; set; }
     }
 }

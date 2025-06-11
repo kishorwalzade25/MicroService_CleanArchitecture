@@ -53,3 +53,8 @@ D:\Angular\MicroServicesV2\bin\Debug\Oder.Infrastructure.dll
 D:\Angular\MicroServicesV2\bin\Debug\Order.API.pdb
 D:\Angular\MicroServicesV2\bin\Debug\Order.Core.pdb
 D:\Angular\MicroServicesV2\bin\Debug\Oder.Infrastructure.pdb
+D:\Angular\MicroServicesV2\bin\Debug\Microsoft.Extensions.Http.dll
+D:\Angular\MicroServicesV2\bin\Debug\Polly.dll
+D:\Angular\MicroServicesV2\bin\Debug\Polly.Core.dll
+D:\Angular\MicroServicesV2\bin\Debug\Microsoft.Extensions.Diagnostics.dll
+D:\Angular\MicroServicesV2\bin\Debug\Microsoft.Extensions.Diagnostics.Abstractions.dll

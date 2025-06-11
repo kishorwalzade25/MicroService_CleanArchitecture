@@ -32,4 +32,6 @@ COPY --from=publish /app/publish .
 #ENV UserMicroServiceURL=http://localhost:61321
 ENV UsersMicroserviceName=localhost
 ENV UsersMicroservicePort=9090
+ENV ProductsMicroserviceName=localhost
+ENV ProductsMicroservicePort=8080
 ENTRYPOINT ["dotnet", "Order.API.dll"]

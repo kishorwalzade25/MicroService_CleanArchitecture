@@ -40,11 +40,11 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
-      - ASPNETCORE_HTTPS_PORTS=8081
+      # - ASPNETCORE_HTTPS_PORTS=8081
       - "ConnectionStrings__productService=Server=ecommerce.data;Database=Product.API;User Id=sa;Password=Kishor25;TrustServerCertificate=True;"
     ports:
       - "62221:8080"
-      - "62222:8081"
+      # - "62222:8081"
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
@@ -64,6 +64,8 @@ services:
       # - ASPNETCORE_HTTPS_PORTS=8081
       - UsersMicroserviceName=ecommerce.api
       - UsersMicroservicePort=9090
+      - ProductsMicroserviceName=product.api
+      - ProductsMicroservicePort=8080
       - "ConnectionStrings__OrderConn=Server=ecommerce.data;Database=Order.API;User Id=sa;Password=Kishor25;TrustServerCertificate=True;"
     ports:
       - "65221:8080"
