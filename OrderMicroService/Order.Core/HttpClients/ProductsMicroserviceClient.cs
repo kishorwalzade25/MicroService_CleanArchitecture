@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.Extensions.Logging;
 using Order.Core.DTO;
 using Polly.Bulkhead;
 using System;
@@ -6,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Json;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Order.Core.HttpClients
@@ -14,11 +16,13 @@ namespace Order.Core.HttpClients
     {
         private readonly HttpClient _httpClient;
         private readonly ILogger<ProductsMicroserviceClient> _logger;
+        private readonly IDistributedCache _distributedCache;
 
-        public ProductsMicroserviceClient(HttpClient httpClient, ILogger<ProductsMicroserviceClient> logger)
+        public ProductsMicroserviceClient(HttpClient httpClient, ILogger<ProductsMicroserviceClient> logger,IDistributedCache distributedCache)
         {
             _httpClient = httpClient;
             _logger = logger;
+            _distributedCache = distributedCache;   
         }
 
 
@@ -26,10 +30,38 @@ namespace Order.Core.HttpClients
         {
             try
             {
+                //Key: product:123
+                //Value: { "ProductName: "...", ...}
+
+                string CacheKey =$"product:{productID}";
+                string? CacheProduct= await _distributedCache.GetStringAsync(CacheKey);
+
+                if (CacheProduct != null) 
+                {
+                    ProductDTO? productDTOCache = JsonSerializer.Deserialize<ProductDTO>(CacheProduct);
+                    return productDTOCache;
+                }
+
                 HttpResponseMessage response = await _httpClient.GetAsync($"/api/Product/getProduct/{productID}");
 
                 if (!response.IsSuccessStatusCode)
                 {
+                    if (response.StatusCode == System.Net.HttpStatusCode.ServiceUnavailable) 
+                    {
+                        ProductDTO? productFromFallback = await response.Content.ReadFromJsonAsync<ProductDTO>();
+
+                        if (productFromFallback == null)
+                        {
+                            throw new NotImplementedException("Fallback policy was not implemented");
+                        }
+
+                        return productFromFallback;
+                    }
+
+
+
+
+
                     if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
                     {
                         return null;
@@ -51,6 +83,14 @@ namespace Order.Core.HttpClients
                 {
                     throw new ArgumentException("Invalid Product ID");
                 }
+
+                string JsonProduct=JsonSerializer.Serialize(product);
+                DistributedCacheEntryOptions options = new DistributedCacheEntryOptions()
+                    .SetAbsoluteExpiration(TimeSpan.FromSeconds(300))
+                    .SetSlidingExpiration(TimeSpan.FromSeconds(100));
+                string CacheProductKey = $"product:{productID}";
+
+                await _distributedCache.SetStringAsync(CacheKey, JsonProduct, options); ;
 
                 return product;
             }

@@ -1,16 +1,22 @@
 {
   "version": 2,
-  "dgSpecHash": "FXRGwzTfrAk=",
+  "dgSpecHash": "/mAdWAGhmmM=",
   "success": true,
   "projectFilePath": "D:\\Angular\\MicroServicesV2\\OrderMicroService\\Order.Core\\Order.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kishor\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
-    "C:\\Users\\Kishor\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.2\\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
-    "C:\\Users\\Kishor\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.2\\microsoft.extensions.logging.abstractions.8.0.2.nupkg.sha512",
-    "C:\\Users\\Kishor\\.nuget\\packages\\microsoft.extensions.options\\8.0.0\\microsoft.extensions.options.8.0.0.nupkg.sha512",
-    "C:\\Users\\Kishor\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\Kishor\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\9.0.6\\microsoft.extensions.caching.abstractions.9.0.6.nupkg.sha512",
+    "C:\\Users\\Kishor\\.nuget\\packages\\microsoft.extensions.caching.stackexchangeredis\\9.0.6\\microsoft.extensions.caching.stackexchangeredis.9.0.6.nupkg.sha512",
+    "C:\\Users\\Kishor\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.6\\microsoft.extensions.dependencyinjection.abstractions.9.0.6.nupkg.sha512",
+    "C:\\Users\\Kishor\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.6\\microsoft.extensions.logging.abstractions.9.0.6.nupkg.sha512",
+    "C:\\Users\\Kishor\\.nuget\\packages\\microsoft.extensions.options\\9.0.6\\microsoft.extensions.options.9.0.6.nupkg.sha512",
+    "C:\\Users\\Kishor\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.6\\microsoft.extensions.primitives.9.0.6.nupkg.sha512",
+    "C:\\Users\\Kishor\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.8\\pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
     "C:\\Users\\Kishor\\.nuget\\packages\\polly\\8.6.0\\polly.8.6.0.nupkg.sha512",
-    "C:\\Users\\Kishor\\.nuget\\packages\\polly.core\\8.6.0\\polly.core.8.6.0.nupkg.sha512"
+    "C:\\Users\\Kishor\\.nuget\\packages\\polly.core\\8.6.0\\polly.core.8.6.0.nupkg.sha512",
+    "C:\\Users\\Kishor\\.nuget\\packages\\stackexchange.redis\\2.7.27\\stackexchange.redis.2.7.27.nupkg.sha512",
+    "C:\\Users\\Kishor\\.nuget\\packages\\system.diagnostics.diagnosticsource\\9.0.6\\system.diagnostics.diagnosticsource.9.0.6.nupkg.sha512",
+    "C:\\Users\\Kishor\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512"
   ],
   "logs": []
 }

@@ -63,14 +63,14 @@ namespace Oder.Infrastructure.Repositries
 
         public async Task<OrderDetails?> GetOrderById(int orderID) 
         {
-            var order = await _orders.Orders.FirstOrDefaultAsync(x => x.OrderID == orderID);
+            var order = await _orders.Orders.Include(w => w.OrderItems).FirstOrDefaultAsync(x => x.OrderID == orderID);
             if(order == null) return null;
             return order;
         }
 
         public async Task<OrderDetails?> GetOrderBy(int orderID)
         {
-            var order = await _orders.Orders.FirstOrDefaultAsync(x => x.OrderID == orderID);
+            var order = await _orders.Orders.Include(w=>w.OrderItems).FirstOrDefaultAsync(x => x.OrderID == orderID);
             if (order == null) return null;
             return order;
         }

@@ -19,7 +19,10 @@ namespace Product.API.Controllers
         [Route("getProduct/{productId:int}")]
         public async Task<IActionResult> get_product(int productId) 
         {
-            var products= await _product.GetProductByCondition(productId);
+            // for fault tolerance
+            //await Task.Delay(1000);
+            //throw new NotImplementedException();
+            var products = await _product.GetProductByCondition(productId);
             if (products == null) {return NotFound();}  
             return Ok(products);
         }

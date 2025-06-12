@@ -17,6 +17,11 @@ namespace Oder.Infrastructure
 
             services.AddScoped<IOrdersRepository,OrdersRepository>();
             services.AddScoped<IOrdersService, OrdersService>();
+
+            services.AddStackExchangeRedisCache(options =>
+            {
+                options.Configuration = $"{configuration["REDIS_HOST"]}:{configuration["REDIS_PORT"]}";
+            });
             return services;
         }
     }

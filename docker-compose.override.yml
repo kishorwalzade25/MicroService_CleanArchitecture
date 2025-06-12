@@ -56,6 +56,15 @@ services:
       - ecommerce-microservice-network
     # network_mode: zap-can
 
+  redis:
+    ports:
+      - "6379:6379"
+    volumes:
+      - ${eCommerce_Path}/redis-cache:/data
+    networks:
+      - ecommerce-microservice-network
+
+
 
   order.api:
     environment:
@@ -66,6 +75,8 @@ services:
       - UsersMicroservicePort=9090
       - ProductsMicroserviceName=product.api
       - ProductsMicroservicePort=8080
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
       - "ConnectionStrings__OrderConn=Server=ecommerce.data;Database=Order.API;User Id=sa;Password=Kishor25;TrustServerCertificate=True;"
     ports:
       - "65221:8080"

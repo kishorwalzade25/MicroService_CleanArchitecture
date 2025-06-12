@@ -22,6 +22,10 @@ namespace eCommerce.API.Controllers
         [Route("getUser/{userId:int}")]
         public async Task<IActionResult> get_user(int userId) 
         {
+            // for fault tolerance
+            //await Task.Delay(100);
+            //throw new NotImplementedException();
+
             if (userId == 0)
             {
                 return BadRequest("Invalid User ID");

@@ -58,3 +58,8 @@ D:\Angular\MicroServicesV2\bin\Debug\Polly.dll
 D:\Angular\MicroServicesV2\bin\Debug\Polly.Core.dll
 D:\Angular\MicroServicesV2\bin\Debug\Microsoft.Extensions.Diagnostics.dll
 D:\Angular\MicroServicesV2\bin\Debug\Microsoft.Extensions.Diagnostics.Abstractions.dll
+D:\Angular\MicroServicesV2\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\Angular\MicroServicesV2\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Angular\MicroServicesV2\bin\Debug\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+D:\Angular\MicroServicesV2\bin\Debug\StackExchange.Redis.dll
+D:\Angular\MicroServicesV2\bin\Debug\Pipelines.Sockets.Unofficial.dll

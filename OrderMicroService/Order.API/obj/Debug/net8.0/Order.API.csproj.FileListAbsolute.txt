@@ -269,3 +269,9 @@ D:\Angular\MicroServicesV2\OrderMicroService\Order.API\bin\Debug\net8.0\Microsof
 D:\Angular\MicroServicesV2\OrderMicroService\Order.API\bin\Debug\net8.0\Polly.dll
 D:\Angular\MicroServicesV2\OrderMicroService\Order.API\bin\Debug\net8.0\Polly.Core.dll
 D:\Angular\MicroServicesV2\OrderMicroService\Order.API\bin\Debug\net8.0\Polly.Extensions.Http.dll
+D:\Angular\MicroServicesV2\OrderMicroService\Order.API\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Angular\MicroServicesV2\OrderMicroService\Order.API\bin\Debug\net8.0\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+D:\Angular\MicroServicesV2\OrderMicroService\Order.API\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+D:\Angular\MicroServicesV2\OrderMicroService\Order.API\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
+D:\Angular\MicroServicesV2\OrderMicroService\Order.API\bin\Debug\net8.0\StackExchange.Redis.dll
+D:\Angular\MicroServicesV2\OrderMicroService\Order.API\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
