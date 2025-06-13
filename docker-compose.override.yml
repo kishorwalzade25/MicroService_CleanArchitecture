@@ -71,9 +71,13 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
       # - ASPNETCORE_HTTPS_PORTS=8081
-      - UsersMicroserviceName=ecommerce.api
-      - UsersMicroservicePort=9090
-      - ProductsMicroserviceName=product.api
+      # - UsersMicroserviceName=ecommerce.api
+      - UsersMicroserviceName=ocelot.apigateway
+      # - UsersMicroservicePort=9090
+      - UsersMicroservicePort=8080
+      # - ProductsMicroserviceName=product.api
+      # - ProductsMicroservicePort=8080
+      - ProductsMicroserviceName=ocelot.apigateway
       - ProductsMicroservicePort=8080
       - REDIS_HOST=redis
       - REDIS_PORT=6379
@@ -92,6 +96,11 @@ services:
       - ecommerce-microservice-network
     # network_mode: zap-can
 
+  ocelot.apigateway:
+    ports:
+      - "4000:8080"
+    networks:
+      - ecommerce-microservice-network
 
 
 networks:

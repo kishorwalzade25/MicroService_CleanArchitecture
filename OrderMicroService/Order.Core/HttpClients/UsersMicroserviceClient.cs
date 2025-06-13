@@ -27,7 +27,8 @@ namespace Order.Core.HttpClients
         {
             try
             {
-                var url = _httpClient.BaseAddress + $"api/ApplicationUsers/{userID}";
+                //var url = _httpClient.BaseAddress + $"api/ApplicationUsers/{userID}";
+                var url = _httpClient.BaseAddress + $"/gateway/ApplicationUsers/{userID}";
                 var response = await _httpClient.GetAsync(url);
 
                 if (!response.IsSuccessStatusCode)

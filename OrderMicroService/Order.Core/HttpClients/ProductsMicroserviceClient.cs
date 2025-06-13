@@ -26,14 +26,14 @@ namespace Order.Core.HttpClients
         }
 
 
-        public async Task<ProductDTO?> GetProductByProductID(int productID)
+        public async Task<ProductDTO?> GetProductByProductID(int productId)
         {
             try
             {
                 //Key: product:123
                 //Value: { "ProductName: "...", ...}
 
-                string CacheKey =$"product:{productID}";
+                string CacheKey =$"product:{productId}";
                 string? CacheProduct= await _distributedCache.GetStringAsync(CacheKey);
 
                 if (CacheProduct != null) 
@@ -42,7 +42,8 @@ namespace Order.Core.HttpClients
                     return productDTOCache;
                 }
 
-                HttpResponseMessage response = await _httpClient.GetAsync($"/api/Product/getProduct/{productID}");
+                //HttpResponseMessage response = await _httpClient.GetAsync($"/api/Product/getProduct/{productID}");
+                HttpResponseMessage response = await _httpClient.GetAsync($"/gateway/Product/getProduct/{productId}");
 
                 if (!response.IsSuccessStatusCode)
                 {
@@ -88,7 +89,7 @@ namespace Order.Core.HttpClients
                 DistributedCacheEntryOptions options = new DistributedCacheEntryOptions()
                     .SetAbsoluteExpiration(TimeSpan.FromSeconds(300))
                     .SetSlidingExpiration(TimeSpan.FromSeconds(100));
-                string CacheProductKey = $"product:{productID}";
+                string CacheProductKey = $"product:{productId}";
 
                 await _distributedCache.SetStringAsync(CacheKey, JsonProduct, options); ;
 

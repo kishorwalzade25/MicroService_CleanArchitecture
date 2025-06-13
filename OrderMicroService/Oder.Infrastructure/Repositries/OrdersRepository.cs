@@ -94,7 +94,7 @@ namespace Oder.Infrastructure.Repositries
 
         public async Task<IEnumerable<OrderDetails>> GetOrders()
         {
-            return await _orders.Orders.ToListAsync();
+            return await _orders.Orders.Include(x=>x.OrderItems).ToListAsync();
         }
 
 
