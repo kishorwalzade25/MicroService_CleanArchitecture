@@ -1,6 +1,7 @@
 D:\Angular\MicroServicesV2\OrderMicroService\Order.Core\bin\Debug\net8.0\Order.Core.deps.json
 D:\Angular\MicroServicesV2\OrderMicroService\Order.Core\bin\Debug\net8.0\Order.Core.dll
 D:\Angular\MicroServicesV2\OrderMicroService\Order.Core\bin\Debug\net8.0\Order.Core.pdb
+D:\Angular\MicroServicesV2\OrderMicroService\Order.Core\obj\Debug\net8.0\Order.Core.csproj.AssemblyReference.cache
 D:\Angular\MicroServicesV2\OrderMicroService\Order.Core\obj\Debug\net8.0\Order.Core.GeneratedMSBuildEditorConfig.editorconfig
 D:\Angular\MicroServicesV2\OrderMicroService\Order.Core\obj\Debug\net8.0\Order.Core.AssemblyInfoInputs.cache
 D:\Angular\MicroServicesV2\OrderMicroService\Order.Core\obj\Debug\net8.0\Order.Core.AssemblyInfo.cs
@@ -10,4 +11,3 @@ D:\Angular\MicroServicesV2\OrderMicroService\Order.Core\obj\Debug\net8.0\Order.C
 D:\Angular\MicroServicesV2\OrderMicroService\Order.Core\obj\Debug\net8.0\refint\Order.Core.dll
 D:\Angular\MicroServicesV2\OrderMicroService\Order.Core\obj\Debug\net8.0\Order.Core.pdb
 D:\Angular\MicroServicesV2\OrderMicroService\Order.Core\obj\Debug\net8.0\ref\Order.Core.dll
-D:\Angular\MicroServicesV2\OrderMicroService\Order.Core\obj\Debug\net8.0\Order.Core.csproj.AssemblyReference.cache

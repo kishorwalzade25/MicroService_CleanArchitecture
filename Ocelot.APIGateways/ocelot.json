@@ -103,6 +103,65 @@
 
     //ProductMicroService
     {
+      "UpstreamPathTemplate": "/gateway/Product/deleteProduct/{productId}/",
+      "DownstreamPathTemplate": "/api/Product/deleteProduct/{productId}",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "product.api",
+          "Port": 8080
+        }
+      ],
+      "UpstreamHttpMethod": [ "Delete", "Options" ],
+      "UpstreamScheme": "http",
+
+      "RateLimitOptions": {
+        "Limit": 3,
+        "Period": "1m",
+        "HttpStatusCode": 429,
+        "EnableRateLimiting": true,
+        "PeriodTimespan": 30,
+        "ClientWhitelist": [
+          // send this value request header with key "Client-Id" and value like below
+          "Client1",
+          "Client2"
+        ],
+        "ClientIdHeader": "Client-Id"
+      }
+
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Product/",
+      "DownstreamPathTemplate": "/api/Product",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "product.api",
+          "Port": 8080
+        }
+      ],
+      "UpstreamHttpMethod": [ "Put","Options" ],
+      "UpstreamScheme": "http",
+
+      "RateLimitOptions": {
+        "Limit": 3,
+        "Period": "1m",
+        "HttpStatusCode": 429,
+        "EnableRateLimiting": true,
+        "PeriodTimespan": 30,
+        "ClientWhitelist": [
+          // send this value request header with key "Client-Id" and value like below
+          "Client1",
+          "Client2"
+        ],
+        "ClientIdHeader": "Client-Id"
+      },
+      // Caching
+      "FileCacheOptions": {
+        "TtlSeconds": 30
+        //"Region": "orders"
+      }
+    },
+
+    {
       "UpstreamPathTemplate": "/gateway/Product/getProduct/{productId}",
       "DownstreamPathTemplate": "/api/Product/getProduct/{productId}",
       "DownstreamHostAndPorts": [
@@ -172,32 +231,32 @@
       }
     }
 
-      //UserMicroService
-      ,
-      {
-        "UpstreamPathTemplate": "/gateway/ApplicationUsers",
-        "DownstreamPathTemplate": "/api/ApplicationUsers",
-        "DownstreamHostAndPorts": [
-          {
-            "Host": "ecommerce.api",
-            "Port": 9090
-          }
-        ],
-        "UpstreamHttpMethod": [ "Post", "Options" ],
-        "UpstreamScheme": "http"
-      },
-      {
-        "UpstreamPathTemplate": "/gateway/ApplicationUsers/{userID}",
-        "DownstreamPathTemplate": "/api/ApplicationUsers/{userID}",
-        "DownstreamHostAndPorts": [
-          {
-            "Host": "ecommerce.api",
-            "Port": 9090
-          }
-        ],
-        "UpstreamHttpMethod": [ "Get" ],
-        "UpstreamScheme": "http"
-      }
+    //UserMicroService
+    ,
+    {
+      "UpstreamPathTemplate": "/gateway/ApplicationUsers",
+      "DownstreamPathTemplate": "/api/ApplicationUsers",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ecommerce.api",
+          "Port": 9090
+        }
+      ],
+      "UpstreamHttpMethod": [ "Post", "Options" ],
+      "UpstreamScheme": "http"
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/ApplicationUsers/{userID}",
+      "DownstreamPathTemplate": "/api/ApplicationUsers/{userID}",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ecommerce.api",
+          "Port": 9090
+        }
+      ],
+      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamScheme": "http"
+    }
   ],
   "GlobalConfiguration": {
     "BaseUrl": "http://localhost:4000"

@@ -1,3 +1,4 @@
+using Product.Core;
 using Product.Core.AutoMapper;
 using Product.Infrastructure;
 
@@ -12,6 +13,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile).Assembly);
 builder.Services.AddInfrastucture(builder.Configuration);
+builder.Services.AddCore();
 
 var app = builder.Build();
 

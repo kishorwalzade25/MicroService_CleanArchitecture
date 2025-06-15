@@ -1,0 +1,91 @@
+﻿using Microsoft.Extensions.Configuration;
+using RabbitMQ.Client;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Text.Json;
+using System.Threading.Channels;
+using System.Threading.Tasks;
+
+namespace Product.Core.RabbitMQ
+{
+    public class RabbitMQPublisher : IRabbitMQPublisher,IDisposable
+    {
+        private readonly IConfiguration _configuration;
+        private readonly IConnection _connection;
+        private readonly IModel _channel;
+
+        public RabbitMQPublisher(IConfiguration configuration) 
+        {
+            _configuration = configuration;
+
+            string hostName = _configuration["RabbitMQ_HostName"]!;
+            string userName = _configuration["RabbitMQ_UserName"]!;
+            string password = _configuration["RabbitMQ_Password"]!;
+            string port = _configuration["RabbitMQ_Port"]!;
+
+            ConnectionFactory connectionFactory = new ConnectionFactory() 
+            {
+                HostName = hostName,
+                UserName = userName,
+                Password = password,
+                Port =Convert.ToInt32(port)
+            };
+
+            _connection = connectionFactory.CreateConnection();
+            _channel=_connection.CreateModel();
+        }
+
+
+        // for topic exchange
+        //public void Publish<T>(string routingKey, T message)
+        public void Publish<T>(Dictionary<string, object> headers, T message)
+        {
+            string messageJson=JsonSerializer.Serialize(message);
+            byte[] messageBodyInBytes = Encoding.UTF8.GetBytes(messageJson);
+
+            //Create Exchange
+            //string exchangeName = "products.exchange";
+            string exchangeName = _configuration["RabbitMQ_Products_Exchange"]!;
+
+            //for direct exchange
+            //_channel.ExchangeDeclare(exchange:exchangeName,type:ExchangeType.Direct,durable:true);
+
+            // for fanout exchange
+            //_channel.ExchangeDeclare(exchange: exchangeName, type: ExchangeType.Fanout, durable: true);
+
+            //for topic exchange
+            //_channel.ExchangeDeclare(exchange: exchangeName, type: ExchangeType.Topic, durable: true);
+
+            //for header exchange
+            _channel.ExchangeDeclare(exchange: exchangeName, type: ExchangeType.Headers, durable: true);
+
+            // Publish message
+            //Direct exchange
+            //_channel.BasicPublish(exchange:exchangeName,routingKey: routingKey,basicProperties:null,body: messageBodyInBytes);
+
+            //For fanout
+            //_channel.BasicPublish(exchange: exchangeName, routingKey: string.Empty, basicProperties: null, body: messageBodyInBytes);
+
+            //for topic exchange
+            //_channel.BasicPublish(exchange: exchangeName, routingKey:routingKey, basicProperties: null, body: messageBodyInBytes);
+
+            //for header exchange
+           
+            var basicProperties = _channel.CreateBasicProperties();
+            basicProperties.Headers = headers;
+
+            _channel.BasicPublish(exchange: exchangeName, routingKey: string.Empty, basicProperties: basicProperties, body: messageBodyInBytes);
+
+
+
+        }
+
+        public void Dispose()
+        {
+            _channel.Dispose();
+            _connection.Dispose();
+        }
+    }
+}

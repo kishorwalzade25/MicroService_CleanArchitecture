@@ -32,3 +32,6 @@ services:
       context: .
       dockerfile: Ocelot.APIGateways/Dockerfile
 
+  rabbitmq:
+    image: rabbitmq:3.13-management
+

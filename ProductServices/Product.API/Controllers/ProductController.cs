@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Product.Core.Entities;
 using Product.Core.RepositriesService;
 
 namespace Product.API.Controllers
@@ -35,5 +36,26 @@ namespace Product.API.Controllers
             if (products == null) {return NotFound();}
             return Ok(products);
         }
+
+        [HttpPut]
+        public async Task<IActionResult> update_product([FromBody] ProductUpdateRequest updatedProduct) 
+        {
+            var update_product= await _product.UpdateProduct(updatedProduct);
+            if (update_product == null) { return NotFound();}
+            return Ok(update_product);
+        }
+
+        [HttpDelete]
+        [Route("deleteProduct/{productId:int}")]
+        public async Task<IActionResult> delete_product(int productId) 
+        {
+            var products = await _product.DeleteProduct(productId);
+            if(products == false) 
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+            return Ok();
+        }
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Product.Core.RabbitMQ;
 
 namespace Product.Core
 {
@@ -6,6 +7,7 @@ namespace Product.Core
     {
         public static IServiceCollection AddCore(this IServiceCollection services) 
         {
+            services.AddTransient<IRabbitMQPublisher, RabbitMQPublisher>();
             
             return services;
         }

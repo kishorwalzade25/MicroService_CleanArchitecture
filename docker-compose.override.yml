@@ -42,6 +42,11 @@ services:
       - ASPNETCORE_HTTP_PORTS=8080
       # - ASPNETCORE_HTTPS_PORTS=8081
       - "ConnectionStrings__productService=Server=ecommerce.data;Database=Product.API;User Id=sa;Password=Kishor25;TrustServerCertificate=True;"
+      - RabbitMQ_HostName=rabbitmq
+      - RabbitMQ_UserName=user
+      - RabbitMQ_Password=password
+      - RabbitMQ_Port=5672
+      - RabbitMQ_Products_Exchange=product.exchange
     ports:
       - "62221:8080"
       # - "62222:8081"
@@ -63,6 +68,16 @@ services:
       - ${eCommerce_Path}/redis-cache:/data
     networks:
       - ecommerce-microservice-network
+  
+  rabbitmq:
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=user
+      - RABBITMQ_DEFAULT_PASS=password
+    networks:
+      - ecommerce-microservice-network
 
 
 
@@ -82,6 +97,11 @@ services:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
       - "ConnectionStrings__OrderConn=Server=ecommerce.data;Database=Order.API;User Id=sa;Password=Kishor25;TrustServerCertificate=True;"
+      - RabbitMQ_HostName=rabbitmq
+      - RabbitMQ_UserName=user
+      - RabbitMQ_Password=password
+      - RabbitMQ_Port=5672
+      - RabbitMQ_Products_Exchange=product.exchange
     ports:
       - "65221:8080"
       # - "65222:8081"

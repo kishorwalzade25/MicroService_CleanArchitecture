@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Oder.Infrastructure.OrderDBContext;
 using Oder.Infrastructure.Repositries;
+using Order.Core.RabbitMQ;
 using Order.Core.RepositriesContract;
 
 
@@ -22,6 +23,11 @@ namespace Oder.Infrastructure
             {
                 options.Configuration = $"{configuration["REDIS_HOST"]}:{configuration["REDIS_PORT"]}";
             });
+
+            services.AddTransient<IRabbitMQProductNameUpdateConsumer, RabbitMQProductNameUpdateConsumer>();
+            services.AddTransient<IRabbitMQProductDeletionConsumer, RabbitMQProductDeletionConsumer>();
+            services.AddHostedService<RabbitMQProductNameUpdateHostedService>();
+            services.AddHostedService<RabbitMQProductDeletionHostedService>();
             return services;
         }
     }

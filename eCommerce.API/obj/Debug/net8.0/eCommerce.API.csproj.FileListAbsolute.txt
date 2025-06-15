@@ -251,6 +251,7 @@ D:\Angular\MicroServicesV2\eCommerce.API\obj\Debug\net8.0\eCommerce.API.Assembly
 D:\Angular\MicroServicesV2\eCommerce.API\obj\Debug\net8.0\eCommerce.API.csproj.CoreCompileInputs.cache
 D:\Angular\MicroServicesV2\eCommerce.API\obj\Debug\net8.0\eCommerce.API.MvcApplicationPartsAssemblyInfo.cs
 D:\Angular\MicroServicesV2\eCommerce.API\obj\Debug\net8.0\eCommerce.API.MvcApplicationPartsAssemblyInfo.cache
+D:\Angular\MicroServicesV2\eCommerce.API\obj\Debug\net8.0\eCommerce.API.sourcelink.json
 D:\Angular\MicroServicesV2\eCommerce.API\obj\Debug\net8.0\scopedcss\bundle\eCommerce.API.styles.css
 D:\Angular\MicroServicesV2\eCommerce.API\obj\Debug\net8.0\staticwebassets.build.json
 D:\Angular\MicroServicesV2\eCommerce.API\obj\Debug\net8.0\staticwebassets.build.json.cache
@@ -263,4 +264,3 @@ D:\Angular\MicroServicesV2\eCommerce.API\obj\Debug\net8.0\refint\eCommerce.API.d
 D:\Angular\MicroServicesV2\eCommerce.API\obj\Debug\net8.0\eCommerce.API.pdb
 D:\Angular\MicroServicesV2\eCommerce.API\obj\Debug\net8.0\eCommerce.API.genruntimeconfig.cache
 D:\Angular\MicroServicesV2\eCommerce.API\obj\Debug\net8.0\ref\eCommerce.API.dll
-D:\Angular\MicroServicesV2\eCommerce.API\obj\Debug\net8.0\eCommerce.API.sourcelink.json
